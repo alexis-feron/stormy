@@ -1,0 +1,313 @@
+/*
+  +----------------------+
+  | CSS : Website Stormy |
+  +----------------------+
+*/
+
+/* --- Import font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900& display=swap');
+
+/* --- Common --- */
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family : 'Poppins', sans-serif;
+}
+
+main
+{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  min-height: 100vh;
+  background: #454A50;
+  overflow-y: auto; // faire apparaître le scroll
+}
+
+
+/* --- Navigation bar --- */
+#navigation3
+{
+	position: sticky;
+	top: 0; // nécessaire à sticky cf doc mdn
+	left: 0; // nécessaire à sticky cf doc mdn
+	width: 75px;
+	min-width: 75px;
+	background: #FAEEE7;
+	box-shadow: 10px 0 0 #454A50;
+	border-left: 10px solid #FAEEE7;
+	overflow-x: hidden;
+	transition: 0.5s;
+	table-layout: fixed;
+	color: #1B1F24;
+    z-index: 1;
+}
+
+#navigation3 ul
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 5px;
+	padding-top: 50px;
+}
+
+#navigation3 ul li
+{
+	position: relative;
+	list-style: none;
+	width: 100%;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+#navigation3 ul li.active
+{
+	background: #454A50;
+}
+
+#navigation3 ul li a
+{
+	position: relative;
+	display: block;
+	width: 100%;
+	display: flex;
+	text-decoration: none;
+	color: #1B1F24;
+}
+
+#navigation3 ul li.active a::before
+{
+	content: '';
+	position: absolute;
+	top: -30px;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	background: #FAEEE7;
+	z-index: -1;
+	border-radius: 50%;
+	box-shadow: 15px 15px 0 #454A50;
+}
+
+#navigation3 ul li.active a::after
+{
+	content: '';
+	position: absolute;
+	bottom: -30px;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	background: #FAEEE7;
+	border-radius: 50%;
+	box-shadow: 15px -15px 0 #454A50;
+}
+
+#navigation3 ul li a .icon
+{
+	position: relative;
+	display: block;
+	min-width: 60px;
+	height: 60px;
+	line-height: 70px;
+	text-align: center;
+}
+
+
+#navigation3 ul li a .logoNav
+{
+	position: relative;
+	display: block;
+	min-width:45px;
+	max-width:45px;
+	padding-bottom: 85px;
+	margin-right: 16px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}
+
+#navigation3 ul li a .icon ion-icon
+{
+	position: relative;
+	font-size: 1.5em;
+	z-index: 1;
+}
+
+#navigation3 ul li a .title
+{
+	position: relative;
+	display: block;
+	padding-left: 10px;
+	height: 60px;
+	line-height: 60px;
+	white-space: nowrap;
+}
+
+#navigation3 ul li a .titleApp
+{
+	position: relative;
+	display: block;
+	padding-left: 10px;
+	height: 45px;
+	line-height: 45px;
+	white-space: nowrap;
+	color: #FF593F;
+}
+
+#navigation3 .active ion-icon
+{
+	color: #FAEEE7;
+}
+
+#navigation3 .active .title
+{
+	color: #FAEEE7;
+}
+
+
+/* --- Page content --- */
+
+.content
+{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 15px;
+}
+
+#change{
+width: 100%;
+height: 40px;
+justify-content: center;
+display: inherit;
+}
+
+.main
+{
+  position: relative;
+  display: flex;
+  flex: 1;
+  background: #FAEEE7;
+  border-radius: 20px;
+  margin: 15px;
+  padding: 15px 5px 15px 5px;
+  min-width: 300px;
+  min-height: 400px;
+  max-height: calc(100% - 30px);
+  color: #1B1F24;
+  flex-flow: row wrap;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.journee{
+  position: relative;
+  width: 100%;
+  flex: 1;
+  text-align: center;
+  padding: 0 5px 0 5px ;
+  min-width: 200px;
+}
+
+.heure{
+  width: 40px;
+  font-size: 12px;
+}
+
+.vide{
+  position: relative;
+  width: 100%;
+  flex: 1;
+  text-align: center;
+  padding: 0 5px 0 5px ;
+  min-width: 200px;
+  display: none;
+}
+
+@media all and (max-width: 1600px){
+  .journee{
+    min-width: calc(25% - 15px);
+  }
+  .vide{
+    display: flex;
+  }
+}
+
+@media all and (max-width: 1000px){
+  .journee{
+    min-width: calc(50% - 15px);
+  }
+}
+
+/* --- card --- */
+
+.edt{
+  width: 100%;
+  height: 110px;
+  background: #1B1F24;
+  color: #FF593F;
+  border-radius: 15px;
+  padding: 10px;
+  margin : 5px 0px 5px 0px;
+  min-width: 100px;
+}
+   
+ion-card-title{
+  margin-top: 10px;
+  font-size: 12px;
+  color: #FAEEE7;
+}
+
+.name{
+  font-size: 20px;
+}
+
+.schedule{
+  color: #FAEEE7;
+  font-size: 13px;
+}
+
+.place{
+  background-color: #454A50;
+  font-size: 22px;
+  border-radius: 15px;
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin-top: 7px;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.evt{
+  width: 100%;
+  height: 110px;
+  background: #1B1F24;
+  border-radius: 15px;
+  padding: 25px;
+  margin : 5px 0px 5px 0px;
+ }
+ 
+ .rightCard{
+  float: right;
+  font-size: 20px;
+  color: #FAEEE7;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+ }
+ 
+ .leftCard{
+  float: left;
+  font-size: 25px;
+  color: #FF593F;
+  line-height: 60px;
+  vertical-align: middle;
+ }
